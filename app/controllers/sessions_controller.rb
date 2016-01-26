@@ -50,9 +50,10 @@ class SessionsController < ApplicationController
     logger.debug "/couunter//: #{@counter}"
     @session.counterfavs=@counter
     @session.save
-    logger.debug "//sesion//: #{@sessions}"
-    format.json { render json: @session.errors, status: ok }
+    render json: @session, status: :ok 
   end
+ 
+  
   # POST /sessions
   # POST /sessions.json
   def create
